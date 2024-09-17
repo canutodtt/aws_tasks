@@ -106,3 +106,10 @@ You will use AWS CDK to define the infrastructure and deploy the following:
 - Ensure that all Lambda functions have the necessary permissions to access the DynamoDB table.
 - Feel free to use a framework (e.g., AWS SDK for DynamoDB) to interact with DynamoDB from Lambda.
 - Consider handling edge cases like missing or invalid task IDs.
+
+hablar de pyenv,
+installar cdk, y awscli por brew
+instalar docker desktop
+crear usuario en AWS
+correr cdk init app --languge python
+ajustar credenciales
