@@ -134,16 +134,32 @@ Default output format: json
 $ sudo systemctl start docker
 $ systemctl show --property ActiveState docker
 ```
-5. Bootstrap the project by running:
+5. Install a python 3.10.12 environment with pyenv:
+```
+$ cd [REPOPATH]
+$ pyenv install 3.10.12
+$ pyenv virtualenv 3.10.12 aws_tasks
+$ pyenv activate aws_tasks
+```
+6. Install dependecies:
+```
+$ pip install -r requirements.txt
+```
+7. create and `.env` file at the root level with the folllowing data:
+```
+AWS_ACCOUNT_ID=<ACCOUNT-ID>
+AWS_REGION=us-east-1
+```
+8. Bootstrap the project by running:
 ```
 $ cdk bootstrap
 ```
-6. Deploy the project
+9. Deploy the project
 ```
 $ cdk synth
 $ cdk deploy
 ```
-7. From the deployment output you may see something like this:
+10. From the deployment output you may see something like this:
 ```
 ...
 AwsTaskCdkStack: deploying... [1/1]
@@ -161,7 +177,7 @@ arn:aws:cloudformation:Region:account-id:stack/HelloCdkStack/unique-identifier
 ✨  Total time: 44.34s
 ```
 Get the url `https://<api-id>.lambda-url.<Region>.on.aws/` and use it as main base
-8. There are 4 endpoint to use:
+11. There are 4 endpoint to use:
 
 | endpoint                                                   | method | body                                                                                              |
 |------------------------------------------------------------|--------|---------------------------------------------------------------------------------------------------|
